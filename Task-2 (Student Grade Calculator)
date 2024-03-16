@@ -1,1 +1,40 @@
+import java.util.*;
+public class StudentGradeCalculator {
+    public static void main(String[]args) {
+        Scanner sc = new Scanner(System.in);
+        int noOfSubjects = sc.nextInt();
+        int total=0;
+        int marks[] = new int[noOfSubjects];
+        for(int i=0;i<noOfSubjects;i++) {
+            marks[i] = sc.nextInt();
+            if(marks[i] < 0 || marks[i] > 100) {
+                System.out.println("Please Enter the Valid Marks");
+                return ;
+            }
+            total+=marks[i];
+        }
+        double average = total/noOfSubjects;
+        char grade;
+        if(average >= 90) {
+            grade = 'A';
+        }
+        else if(average >= 80){
+            grade = 'B';
+        }
+        else if(average >= 70){
+            grade = 'C';
+        }
+        else if(average >=60){
+            grade = 'D';
+        }else if(average >= 50){
+            grade = 'E';
+        }
+        else{
+            grade = 'F';
+        }
+        System.out.println("Total Marks : "+total);
+        System.out.println("Average : "+average);
+        System.err.println("Grade Obtained : "+grade);
 
+    }
+}
